@@ -21,17 +21,8 @@ block main-content
         br
         #btn
           button#button(type='submit' value='submit') Submit
-    #result
+    .result
     - if (bmivalue)
       li BMI:#{bmivalue.bmi}  
       li Health: #{bmivalue.health}
       li Healthy-BMI-Range: #{bmivalue.healthy_bmi_range}
-    - else
-      p No BMI value yet.
-    -//ul 
-      -//each q in bmivalue
-        -//li #{q}
-    -//li BMI:#{bmivalue}
-    -//  li BMI:#{bmivalue.bmi}  
-    -//Health: #{bmivalue.health}  Healthy-BMI-Range: #{bmivalue.healthy_bmi_range}  
-    -//make some strategy it will display after submission of form

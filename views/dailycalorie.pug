@@ -31,12 +31,6 @@ block main-content
         br
         input(type='submit' value='Submit')
         br
-    #result
+    .result
     - if (dailycalorie)
         li BMR: #{dailycalorie.BMR}
-        li #{dailycalorie.goals}
-        ul 
-        each q in dailycalorie.goals
-            li #{q}
-    - else
-      p No daily calorie requirements value yet.

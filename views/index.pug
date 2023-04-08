@@ -24,4 +24,14 @@ block main-content
           h3 Equipment
           p want to do exercise with specific equipment
           a.cta-button(href='/equipment') Explore Here
+  section#contact
+      button(onclick='displayForm()') Contact Us
+      form#myForm(style='display:none;' action='/contact' method='POST')
+        label(for='name' ) Name
+        input#name(type='text' name='name' required='' placeholder='John Doe')
+        label(for='email') Email
+        input#email(type='email' name='email' required=''  placeholder='john@gmail.ca')
+        label(for='message') Message
+        textarea#message(name='message' required='' placeholder='write your text here')
+        button(type='submit') Send
 

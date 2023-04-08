@@ -3,6 +3,7 @@ doctype html
 html 
   head
     meta(charset="utf-8")
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
     title #{title} | Lets Do Exercise
     block scripts 
       link(rel="stylesheet", type="text/css", href="/styles.css")
@@ -27,23 +28,12 @@ html
             a(href='/bmi') BMI
           li
             a(href='/dailycalorie') Daily Calorie
-          li
-            a(href='/food') Food
+          -//li
+            -//a(href='/food') Food
           li
             a(href='/activities') Activity
     main#main 
       block main-content 
-    section#contact
-      h2 Contact Us
-      button(onclick='displayForm()') Show Form
-      form#myForm(style='display:none;' action='/contact' method='POST')
-        label(for='name') Name
-        input#name(type='text' name='name' required='')
-        label(for='email') Email
-        input#email(type='email' name='email' required='')
-        label(for='message') Message
-        textarea#message(name='message' required='')
-        button(type='submit') Send
     script.
       function displayForm() {
       var form = document.getElementById("myForm");

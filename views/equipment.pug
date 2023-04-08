@@ -15,9 +15,12 @@ block main-content
                   option(value= e selected = (e==selectedEquipment)) #{e} 
             #btn
               button#button(type='submit' value='submit') Submit
-    ul 
+    #result
+    - if (selectedEquipment)
+      ul
       each q in equipmentExercises
         - url = `${q.gifUrl}`;
         li
         img(src= url) 
         li Bodypart:#{q.bodyPart} <br> Equipment:#{q.equipment} <br> Name:#{q.name} <br> Target:#{q.target} 
+        <br>

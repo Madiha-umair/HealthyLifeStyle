@@ -43,31 +43,31 @@ h1, h2, h3, h4 {
   text-align: center;
   font-family: 'Libre Baskerville', serif;
   font-size: 20px;
-  margin-bottom:20px;
+  margin-left: auto;
 }
 li a {
   text-decoration: none;
 }
-
 #main-navigation li {
   display:inline-block;
   margin-right:2em;
-
 }
 #header.flex-container {
   align-items:center; /* flex container property to vertically align flex items to the center */
-  /*margin-top: 30px;*/
+  overflow:visible; /* hide any content that overflows the header */
+  position: relative;
 }
 
 #header, #footer{
   background-color:#efd9d8;
-  /*padding:1em 2em;*/
-  color:#a50909;
 }
 #footer{
-  padding:1em 1em;
+ /* padding:1em 1em;*/
   text-align: center;
   font-size: 15px;
+}
+p{
+  margin: 0;
 }
 
 a, a:link {
@@ -80,22 +80,17 @@ a, a:link {
 a:hover {
   color:#000000;
 }
-/* :active is the state where the mouse button is pressed down
- * but before releasing the button
- */
 a:active {
   color:rgb(12, 12, 12);
 }
+
+/* Main Styles */
 #bannerimg img{
  position: relative;
  right:0px;
 }
 /* Hero Styles */
 #hero {
-	/*background-image: url("hero.jpg");
-	background-size: cover;
-	background-position: center;
-	height: 500px;*/
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -113,7 +108,9 @@ a:active {
 	font-size: 18px;
   margin-right: 40px;
 }
-.cta-button, #btn button {
+
+/*Button Styles*/
+.cta-button, #btn button, #contact button {
   background-color: #efd9d8;
   border: none;
   color: #a50909;
@@ -127,8 +124,8 @@ a:active {
   margin-top:15px;
 }
 
-.cta-button:hover , #btn button:hover{
-	background-color: red;
+.cta-button:hover , #btn button:hover, #contact button:hover, #contact form button:hover {
+	background-color: #a50909;
   color:black;
  /* text-transform: uppercase;
   transition: background-color 0.3s ease;*/
@@ -152,7 +149,6 @@ a:active {
 	font-size: 24px;
 	margin-bottom: 10px;
 }
-
 .service p {
 	font-size: 16px;
 	line-height: 1.5;
@@ -162,27 +158,26 @@ a:active {
   font-size: 2em;
   font-weight: bold;
 }
-
 #introduction p {
   font-size: 1.2em;
 }
-
 #selection-option label {
   font-weight: bold;
 }
-
 #bodypart, #targetmuscles, #equipment, #intensitylevel{
   font-size: 1em;
   padding: 0.5em;
   border-radius: 5px;
 }
 
+/* Form Styles*/
 form, .service {
   width: 600px;
   margin: 0 auto;
   border: 1px solid #ccc;
   padding: 20px;
   border-radius: 5px;
+  margin-bottom:50px;
 }
 
 .form-container {
@@ -194,7 +189,9 @@ form {
   align-items: center;
   justify-content: center;
 }
-
+#result{
+  margin-bottom: 160px;
+}
 label {
   display: block;
   font-size: 1.2rem;
@@ -243,17 +240,16 @@ input[type='submit']:hover {
 }
 
 /* Content Styles */
-p {
-  margin: 20px 0;
-}
+
 .bmi, .activities {
   text-align: center;
-  width: 900px;
+  width: 800px;
   margin: 0 auto;
   border: 1px solid #ffffff;
   padding: 20px;
   border-radius: 5px;
 }
+
 /* Result Styles */
 li {
  /* font-size: 1.2rem;
@@ -262,23 +258,20 @@ li {
   font-size: 1em;
   text-decoration: none;
 }
-#result{
-  text-decoration: none;
-}
-#result li{
-  text-decoration: none;
-}
 
 /* Contact Form Styles */
 #contact {
   background-color: #f7f7f7;
-  padding: 50px;
+  padding: 15px;
   text-align: center;
 }
 
-#contact h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
+#contact button
+ {
+  margin-bottom: 30px;
+  font-family: 'Libre Baskerville', serif;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 #contact form {
@@ -310,17 +303,13 @@ li {
 }
 
 #contact form button {
-  background-color: #ff6f61;
-  color: #fff;
+  background-color: #d7d1d1;
+  color: #000000;
   font-size: 18px;
   border: none;
   border-radius: 5px;
   padding: 15px 30px;
   cursor: pointer;
-}
-
-#contact form button:hover {
-  background-color: #e9614d;
 }
 
 /* Social media Styles */
@@ -330,25 +319,53 @@ li {
 }
 
 .social-icons a {
-  margin: 0 10px;
-  color: #fff;
-  font-size: 20px;
+  margin: 5px 10px;
+  color: black;
+  font-size: 25px;
   transition: color 0.5s;
 }
-
 .social-icons a:hover {
-  color: #3498db;
+  color: #a50909;
 }
-/* Styles for screens smaller than 600px */
-@media (max-width: 600px) {
+.hidden {
+  display: none;
+}
+#menu {
+  display: block;
+}
+#menu-toggle {
+  display: none;
+  margin-left: auto; 
+}
+
+/* Styles for screens between 767px and 1200px */
+@media (min-width: 767px) and (max-width: 1200px) {
+  #site-name {
+    font-size: 24px;
+  }
+  #main-navigation {
+    font-size: 18px;
+  }
+  .service {
+    flex-basis: 50%;
+  }
+}
+
+/*Styles for screens less than 767px*/
+@media (max-width: 767px) {
+  h1.page-title {
+    font-size: 24px;
+  }
   #site-name {
     font-size: 20px;
   }
   #main-navigation {
     font-size: 16px;
+    margin-left: auto;
   }
   #header.flex-container {
     flex-direction: column;
+    align-items:normal;
   }
   #header #site-name {
     margin: 0;
@@ -370,59 +387,83 @@ li {
   #hero #img img {
     width: 100%;
   }
-}
-.hidden {
-  display: none;
-}
-/*
-#menu {
-  display: block;
-}
-#menu-toggle {
-  display: none;
-}
-  */
 
-/* Styles for screens between 600px and 1200px */
-@media (min-width: 800px) and (max-width: 1200px) {
-  #site-name {
-    font-size: 24px;
-  }
-  #main-navigation {
-    font-size: 18px;
-  }
-  .service {
-    flex-basis: 50%;
-  }
-}
-
-/* Styles for mobile screens */
-@media screen and (max-width: 767px) {
   /* Hide the navigation menu by default */
   #menu {
     display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background-color: #6b1313;
+    padding: 1em;
   }
-  
+
   /* Show the menu toggle button */
   #menu-toggle {
     display: block;
+    position: absolute;
+    top: 25%;
+    right: 5%;
+    color: #6b1313;
+    font-weight: bold;
   }
-  /* Hide the menu by default */
-
   /* Styles for the expanded menu */
   #menu[aria-hidden="false"] {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: #6b1313;
+    /*position: relative;*/
+    top: 34%;
+    left: 70%;
+    width: 120px;
+    background-color: black;
     padding: 1em;
+    z-index: 1; /* set a higher z-index value to ensure that the menu appears on top of other elements */
+  }
+
+  #menu[aria-hidden="false"] a, a:link {
+    color: #ffffff; /* change text color using the color property */
   }
   
   #menu-toggle[aria-expanded="true"] {
     background-color: #ea0c0c;
   }
+  #contact form {
+    max-width: 100%;
+  }
+  .form-container, form, .service {
+    width: 100%;
+    padding: 10px;
+  }
+  .form-container, form, .service {
+    width: 100%;
+    padding: 10px;
+  }
 }
 
+/* Styles for screens less than 400px*/
+@media screen and (max-width: 400px) {
+  h1.page-title {
+    font-size: 18px;
+  }
+  #contact form {
+    padding: 15px;
+  }
+  
+  #contact form input,
+  #contact form textarea {
+    font-size: 14px;
+  }
+  
+  #contact form button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+  input[type='submit'] {
+    font-size: 1rem;
+  }
+  
+  label {
+    font-size: 1rem;
+  }
+}
