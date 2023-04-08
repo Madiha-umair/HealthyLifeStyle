@@ -1,0 +1,75 @@
+block variables 
+doctype html 
+html 
+  head
+    meta(charset="utf-8")
+    title #{title} | Lets Do Exercise
+    block scripts 
+      link(rel="stylesheet", type="text/css", href="/styles.css")
+  body
+    header#header.flex-container
+      h2#site-name
+        img(src= 'fitnesslogo.jpg' alt='lifting weight' width='30' height='30')
+        a(href='/') Healthy Life Style
+      nav#main-navigation(aria-label='Main navigation')
+        button#menu-toggle(aria-expanded='false' aria-controls='menu')
+          | Menu
+        ul#menu.menu.hidden
+          li
+            a(href='/') Home
+          li
+            a(href='/bodypart') BodyPart
+          li
+            a(href='/targetmuscles') TargetMuscles
+          li
+            a(href='/equipment') Equipment
+          li
+            a(href='/bmi') BMI
+          li
+            a(href='/dailycalorie') Daily Calorie
+          li
+            a(href='/food') Food
+          li
+            a(href='/activities') Activity
+    main#main 
+      block main-content 
+    section#contact
+      h2 Contact Us
+      button(onclick='displayForm()') Show Form
+      form#myForm(style='display:none;' action='/contact' method='POST')
+        label(for='name') Name
+        input#name(type='text' name='name' required='')
+        label(for='email') Email
+        input#email(type='email' name='email' required='')
+        label(for='message') Message
+        textarea#message(name='message' required='')
+        button(type='submit') Send
+    script.
+      function displayForm() {
+      var form = document.getElementById("myForm");
+      if (form.style.display === "none") {
+      form.style.display = "block";
+      } else {
+      form.style.display = "none";
+      }
+      }
+      const menuToggle = document.getElementById("menu-toggle");
+      const menu = document.querySelector(".menu");
+      menuToggle.addEventListener("click", function() {
+        menu.classList.toggle("hidden");
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true" || false;
+        menuToggle.setAttribute("aria-expanded", !expanded);
+        menu.setAttribute("aria-hidden", expanded);
+        });
+    script(src='https://kit.fontawesome.com/a45da3d245.js' crossorigin='anonymous')
+    footer#footer 
+      .social-icons
+        a(href='https://www.facebook.com')
+          i.fa.fa-facebook
+        a(href='https://www.twitter.com')
+          i.fa.fa-twitter
+        a(href='https://www.linkedin.com')
+          i.fa.fa-linkedin
+        a(href='https://www.instagram.com')
+          i.fa.fa-instagram
+      p &copy; Copyright Madiha Umair, 2023.

@@ -1,0 +1,23 @@
+extends layout 
+
+block main-content 
+  h1.page-title 
+  .form-container
+    h2#inroduction  Explore Exercises
+    form(name='form' method='get' action="/equipment")
+      p Select an option of equipment you want to do the exercise for!
+        #selection-option
+          div
+            label(for='equipments') 
+            select#equipment(name='equipments')
+              option(value='' selected='' disabled='') --Select Equipment--
+                each e in equipmentList
+                  option(value= e selected = (e==selectedEquipment)) #{e} 
+            #btn
+              button#button(type='submit' value='submit') Submit
+    ul 
+      each q in equipmentExercises
+        - url = `${q.gifUrl}`;
+        li
+        img(src= url) 
+        li Bodypart:#{q.bodyPart} <br> Equipment:#{q.equipment} <br> Name:#{q.name} <br> Target:#{q.target} 

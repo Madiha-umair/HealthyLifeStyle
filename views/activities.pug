@@ -1,0 +1,25 @@
+extends layout 
+             
+block main-content  
+    h1.page-title  Activities
+    p.activities Each activity in our life has different MET values.
+                |In other words, they burn different calories at the same time. 
+                |To find the most relevant activity according to your goal, you need to know their MET values.
+    form(name='form' method='get' action="/activities")
+        label(for='intensitylevel') Intensity Level
+        input#intensitylevel(type='number' name='intensitylevel' value='' placeholder='')
+        span Intensitylevel variable must be numeric and can only be one of 1,2,3,4,5,6,7,8,9
+        br
+        #btn
+          button#btn(type='submit' value='submit') Submit
+    #result
+    - if (activities)
+      ul
+      each f in activities
+        li Activity: #{f.activity}
+        li Met Value: #{f.metValue}
+        li Description: #{f.description}
+        li Intensity Level: #{f.intensityLevel}
+        <br>
+    - else
+      p No activities value yet.

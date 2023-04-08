@@ -1,0 +1,25 @@
+extends layout 
+
+block main-content 
+
+  h1.page-title 
+  .form-container
+    h2#inroduction Explore Exercises
+    form(name='form' method='get' action="/targetmuscles")
+      p Select an option of your target muscle you want to do the exercise for!
+        #selection-option
+          div
+            label(for='targetmuscles')
+            select#targetmuscles(name='targetmuscles')
+              option(value='' selected='' disabled='') --Select Target Muscle--
+                each m in targetMuscles
+                  option(value=m selected = (m==selectedTargetMuscles)) #{m} 
+            #btn
+              button#btn(type='submit' value='submit') Submit
+    #result
+      ul 
+        each m in musclesExercises
+          - url2 = `${m.gifUrl}`;
+          li
+          img(src= url2) 
+          li Bodypart:#{m.bodyPart} <br> Equipment:#{m.equipment} <br> Name:#{m.name} <br> Target:#{m.target} 

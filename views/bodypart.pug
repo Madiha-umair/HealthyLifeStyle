@@ -1,0 +1,23 @@
+extends layout 
+block main-content 
+
+  h1.page-title 
+  .form-container
+    h2#inroduction  Explore Exercises
+    form(name='form' method='get' action="/bodypart")
+      p Select an option of your body part you want to do the exercise for!
+        #selection-option
+          div
+            label(for='bodyparts')
+            select#bodypart(name='bodyparts')
+              option(value='' selected='' disabled='') --Select Body Part--
+                each b in bodyParts
+                  option(value= b selected = (b==selectedbodypart)) #{b} 
+            #btn
+              button#submit(type='submit' value='submit') Submit
+    ul 
+      each r in bodyPartResult
+        - url2 = `${r.gifUrl}`;
+        li
+        img(src= url2) 
+        li Bodypart:#{r.bodyPart} <br> Equipment:#{r.equipment} <br> Name:#{r.name} <br> Target:#{r.target} 
