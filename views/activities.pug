@@ -14,10 +14,6 @@ block main-content
           button#btn(type='submit' value='submit') Submit
     .result
     - if (activities)
-      ul
       each f in activities
-        li Activity: #{f.activity}
-        li Met Value: #{f.metValue}
-        li Description: #{f.description}
-        li Intensity Level: #{f.intensityLevel}
+        .activityresult Activity: #{f.activity} <br> Met Value: #{f.metValue} <br> Description: #{f.description} <br> Intensity Level: #{f.intensityLevel}
         <br>

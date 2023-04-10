@@ -17,10 +17,7 @@ block main-content
               button#submit(type='submit' value='submit') Submit
     #result
     - if (selectedbodypart)
-      ul
       each r in bodyPartResult
         - url2 = `${r.gifUrl}`;
-        li
         img(src= url2) 
-        li Bodypart:#{r.bodyPart} <br> Equipment:#{r.equipment} <br> Name:#{r.name} <br> Target:#{r.target} 
-        <br>
+        <br> Bodypart:#{r.bodyPart} <br> Equipment:#{r.equipment} <br> Name:#{r.name} <br> Target:#{r.target} <hr>

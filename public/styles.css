@@ -57,7 +57,6 @@ li a {
   overflow:visible; /* hide any content that overflows the header */
   position: relative;
 }
-
 #header, #footer{
   background-color:#efd9d8;
 }
@@ -131,7 +130,6 @@ a:active {
   transition: background-color 0.3s ease;*/
 }
 
-
 /* Services Styles */
 #services {
 	padding: 50px;
@@ -140,7 +138,6 @@ a:active {
 	justify-content: space-between;
 	align-items: center;
 }
-
 .service {
 	flex-basis: 30%;
 	margin-bottom: 50px;
@@ -152,11 +149,6 @@ a:active {
 .service p {
 	font-size: 16px;
 	line-height: 1.5;
-}
-
-.page-title {
-  font-size: 2em;
-  font-weight: bold;
 }
 #introduction p {
   font-size: 1.2em;
@@ -198,22 +190,20 @@ label {
   margin-bottom: 5px;
 }
 
-input[type='number'] {
+input[type='number'], input[type='text'] {
   padding: 10px;
   border: 2px solid #ccc;
   border-radius: 4px;
-  width: 100%;
+  width: 50%;
   margin-bottom: 10px;
   font-size: 1.2rem;
 }
-
 span {
   font-size: 0.9rem;
   color: #777;
   margin-bottom: 10px;
   text-align: center;
 }
-
 input[type='submit'] {
   background-color: #efd9d8;
   color: #810b0b;
@@ -223,12 +213,10 @@ input[type='submit'] {
   cursor: pointer;
   font-size: 1.2rem;
 }
-
 input[type='submit']:hover {
   background-color: #e81f1f;
   color:#000000;
 }
-
 
 /* Page Title Styles */
 .page-title {
@@ -238,9 +226,7 @@ input[type='submit']:hover {
   padding: 20px;
   text-align: center;
 }
-
 /* Content Styles */
-
 .bmi, .activities {
   text-align: center;
   width: 800px;
@@ -337,11 +323,28 @@ li {
   display: none;
   margin-left: auto; 
 }
-
-/* Styles for screens between 767px and 1200px */
-@media (min-width: 767px) and (max-width: 1200px) {
+.bmiresult, .calorieresult, .activityresult{
+  margin-bottom: 8em;
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 4px 4px 4px 4px #d3c7c7;
+  display: inline-block;
+  position: relative;
+  padding: 10px;
+}
+.bmiresult{
+  left: 43%;
+}
+.calorieresult{
+  left: 46%;
+}
+.activityresult{
+  left:32%;
+}
+/********** Styles for screens between 767px and 1200px ***********/
+@media (min-width: 850px) and (max-width: 1200px) {
   #site-name {
     font-size: 24px;
+    text-align: left;
   }
   #main-navigation {
     font-size: 18px;
@@ -351,13 +354,20 @@ li {
   }
 }
 
-/*Styles for screens less than 767px*/
-@media (max-width: 767px) {
+/*Styles for screens less than 850px*/
+@media (max-width: 850px) {
   h1.page-title {
-    font-size: 24px;
+    font-size: 20px;
   }
   #site-name {
-    font-size: 20px;
+    font-size: 22px;
+    text-align: left;
+  }
+  #site-name a {
+    vertical-align:top;
+  }
+  #hero h2 {
+    font-size: 28px;
   }
   #main-navigation {
     font-size: 16px;
@@ -366,10 +376,6 @@ li {
   #header.flex-container {
     flex-direction: column;
     align-items:normal;
-  }
-  #header #site-name {
-    margin: 0;
-    margin-bottom: 10px;
   }
   #header #main-navigation {
     margin: 0;
@@ -394,7 +400,7 @@ li {
     position: absolute;
     top: calc(100% + 10px);
     left: 0;
-    background-color: #6b1313;
+    background-color: #a50909;
     padding: 1em;
   }
 
@@ -404,7 +410,7 @@ li {
     position: absolute;
     top: 25%;
     right: 5%;
-    color: #6b1313;
+    color: #a50909;
     font-weight: bold;
   }
   /* Styles for the expanded menu */
@@ -413,11 +419,12 @@ li {
     flex-direction: column;
     position: absolute;
     /*position: relative;*/
-    top: 34%;
-    left: 70%;
-    width: 120px;
+    top: 84%;
+    left: 80%;
+    width: 160px;
     background-color: black;
-    padding: 1em;
+    margin: 0;
+    padding: 0;
     z-index: 1; /* set a higher z-index value to ensure that the menu appears on top of other elements */
   }
 
@@ -426,7 +433,7 @@ li {
   }
   
   #menu-toggle[aria-expanded="true"] {
-    background-color: #ea0c0c;
+    background-color: #a50909;
   }
   #contact form {
     max-width: 100%;
@@ -439,17 +446,34 @@ li {
     width: 100%;
     padding: 10px;
   }
+  .activityresult{
+    left:0%;
+  }
+  .calorieresult{
+    left:40%;
+  }
+  .bmi, .activities {
+    width: 100%;
+    margin: 10px;
+  }
 }
 
-/* Styles for screens less than 400px*/
+/************* Styles for screens less than 400px************/
 @media screen and (max-width: 400px) {
   h1.page-title {
     font-size: 18px;
   }
+  #site-name {
+    font-size: 18px;
+  }
+  #hero h2 {
+    font-size: 24px;
+    margin-right:0 ;
+  }
   #contact form {
     padding: 15px;
   }
-  
+
   #contact form input,
   #contact form textarea {
     font-size: 14px;
@@ -462,8 +486,46 @@ li {
   input[type='submit'] {
     font-size: 1rem;
   }
-  
   label {
     font-size: 1rem;
   }
+  #menu[aria-hidden="false"] {
+    left: 65%;
+    width: 100px;
+    padding: 0;
+    font-size: 12px;
+  }
+  .calorieresult{
+    left:35%;
+    font-size: 12px;
+  }
+  .bmi, .activities {
+    width: 100%;
+    margin: 10px;
+    padding: 0;
+  }
+  .page-title {
+    padding: 10px;
+  }
+  #menu-toggle {
+    right: 10%;
+  }
+  #equipment {
+    font-size: 14px;
+  }
+  #btn button{
+      font-size: 14px;
+  }
+  body {
+    font-size: 14px;
+  }
+
+  /* Social media Styles */
+  .social-icons a {
+    margin: 5px 5px;
+    font-size: 14px;
+  }
+  #footer{
+    font-size: 12px;
+ }
 }

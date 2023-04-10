@@ -18,10 +18,7 @@ block main-content
               button#btn(type='submit' value='submit') Submit
     #result
     - if (selectedTargetMuscles)
-      ul
       each m in musclesExercises
         - url = `${m.gifUrl}`;
-        li
         img(src= url) 
-        li Bodypart:#{m.bodyPart} <br> Equipment:#{m.equipment} <br> Name:#{m.name} <br> Target:#{m.target} 
-        <br>
+        <br> Bodypart:#{m.bodyPart} <br> Equipment:#{m.equipment} <br> Name:#{m.name} <br> Target:#{m.target} <hr>

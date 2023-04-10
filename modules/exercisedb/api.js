@@ -11,7 +11,7 @@ async function getListOfBodyParts(){
         {
             method: "GET",
             headers:  {
-                "X-RapidAPI-Key": "fec11063c2msh7ea5f60e9a1806ap1b4a8ejsn97f17f69a5f4",
+                "X-RapidAPI-Key": "7106c8e6e0msh01abc33797f25ebp189cf6jsn1b8a3f05cff3",
                 "X-RapidAPI-Host": "exercisedb.p.rapidapi.com"
               }
         }
@@ -32,7 +32,7 @@ async function getListByBodyParts(url){
         {
             method: "GET",
             headers:  {
-                "X-RapidAPI-Key": "fec11063c2msh7ea5f60e9a1806ap1b4a8ejsn97f17f69a5f4",
+                "X-RapidAPI-Key": "7106c8e6e0msh01abc33797f25ebp189cf6jsn1b8a3f05cff3",
                 "X-RapidAPI-Host": "exercisedb.p.rapidapi.com"
               }
         }
@@ -48,7 +48,7 @@ async function getListOfTargetMuscles(){
         {
             method: "GET",
             headers:  {
-                "X-RapidAPI-Key": "fec11063c2msh7ea5f60e9a1806ap1b4a8ejsn97f17f69a5f4",
+                "X-RapidAPI-Key": "7106c8e6e0msh01abc33797f25ebp189cf6jsn1b8a3f05cff3",
                 "X-RapidAPI-Host": "exercisedb.p.rapidapi.com"
               }
         }
@@ -64,7 +64,7 @@ async function getListByTargetMuscles(url){
         {
             method: "GET",
             headers:  {
-                "X-RapidAPI-Key": "fec11063c2msh7ea5f60e9a1806ap1b4a8ejsn97f17f69a5f4",
+                "X-RapidAPI-Key": "7106c8e6e0msh01abc33797f25ebp189cf6jsn1b8a3f05cff3",
                 "X-RapidAPI-Host": "exercisedb.p.rapidapi.com"
               }
         }
@@ -81,7 +81,7 @@ async function getListOfEquipment(){
         {
             method: "GET",
             headers:  {
-                "X-RapidAPI-Key": "fec11063c2msh7ea5f60e9a1806ap1b4a8ejsn97f17f69a5f4",
+                "X-RapidAPI-Key": "7106c8e6e0msh01abc33797f25ebp189cf6jsn1b8a3f05cff3",
                 "X-RapidAPI-Host": "exercisedb.p.rapidapi.com"
               }
         }
@@ -97,7 +97,7 @@ async function getListByEquipment(url){
         {
             method: "GET",
             headers:  {
-                "X-RapidAPI-Key": "fec11063c2msh7ea5f60e9a1806ap1b4a8ejsn97f17f69a5f4",
+                "X-RapidAPI-Key": "7106c8e6e0msh01abc33797f25ebp189cf6jsn1b8a3f05cff3",
                 "X-RapidAPI-Host": "exercisedb.p.rapidapi.com"
               }
         }
@@ -117,7 +117,7 @@ async function getbmi(age, weight, height){
         {
             method: "GET",
             headers:  {
-                "X-RapidAPI-Key": "fec11063c2msh7ea5f60e9a1806ap1b4a8ejsn97f17f69a5f4",
+                "X-RapidAPI-Key": "7106c8e6e0msh01abc33797f25ebp189cf6jsn1b8a3f05cff3",
                 "X-RapidAPI-Host": "fitness-calculator.p.rapidapi.com'"
               }
         }
@@ -134,7 +134,7 @@ async function dailyCalorieRequirements(age,gender,height,weight,activitylevel){
         {
             method: "GET",
             headers:  {
-                "X-RapidAPI-Key": "fec11063c2msh7ea5f60e9a1806ap1b4a8ejsn97f17f69a5f4",
+                "X-RapidAPI-Key": "7106c8e6e0msh01abc33797f25ebp189cf6jsn1b8a3f05cff3",
                 "X-RapidAPI-Host": "fitness-calculator.p.rapidapi.com'"
               }
         }
@@ -155,7 +155,7 @@ async function getListofActivities(intensitylevel){
         {
             method: "GET",
             headers:  {
-                "X-RapidAPI-Key": "fec11063c2msh7ea5f60e9a1806ap1b4a8ejsn97f17f69a5f4",
+                "X-RapidAPI-Key": "7106c8e6e0msh01abc33797f25ebp189cf6jsn1b8a3f05cff3",
                 "X-RapidAPI-Host": "fitness-calculator.p.rapidapi.com"
               }
         }
@@ -175,7 +175,7 @@ async function foodinfo(){
         {
             method: 'GET',
             headers: {
-              'X-RapidAPI-Key': 'fec11063c2msh7ea5f60e9a1806ap1b4a8ejsn97f17f69a5f4',
+              'X-RapidAPI-Key': '7106c8e6e0msh01abc33797f25ebp189cf6jsn1b8a3f05cff3',
               'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com'
             }
             
@@ -193,7 +193,7 @@ async function foodlist(){
         {
             method: 'GET',
             headers: {
-              'X-RapidAPI-Key': 'fec11063c2msh7ea5f60e9a1806ap1b4a8ejsn97f17f69a5f4',
+              'X-RapidAPI-Key': '7106c8e6e0msh01abc33797f25ebp189cf6jsn1b8a3f05cff3',
               'X-RapidAPI-Host': 'fitness-calculator.p.rapidapi.com'
             }
             

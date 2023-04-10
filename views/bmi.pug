@@ -1,28 +1,26 @@
 extends layout 
 block main-content 
-  p.page-title BMI
-    p.bmi The BMI value refers to the body mass index of a person.
-          | It is calculated by using the mass(weight) and height of him/her.
-          | The main goal of using it is to decide whether a person is overweight, normal-weight, or underweight.
-    br
-    br
-    form(name='form' method='get' action="/bmi")
-        label(for='age') Age:
-        input#age(type='number' name='age' value='' placeholder='')
-        span It must be number. It cannot be negative or bigger than 80
-        br
-        label(for='weight') Weight:
-        input#age(type='number' name='weight' value='' placeholder='')
-        span It must be number. It cannot be smaller than 40 or bigger than 160. The unit of weight is in kg.
-        br
-        label(for='height') Height:
-        input#height(type='number' name='height' value='' placeholder='')
-        span It must be number. It cannot be smaller than 130 or bigger than 230. The unit of height is in cm.
-        br
-        #btn
-          button#button(type='submit' value='submit') Submit
-    .result
-    - if (bmivalue)
-      li BMI:#{bmivalue.bmi}  
-      li Health: #{bmivalue.health}
-      li Healthy-BMI-Range: #{bmivalue.healthy_bmi_range}
+  h1.page-title BMI
+  p.bmi The BMI value refers to the body mass index of a person.
+        | It is calculated by using the mass(weight) and height of him/her.
+        | The main goal of using it is to decide whether a person is overweight, normal-weight, or underweight.
+  br
+  br
+  form(name='form' method='get' action="/bmi")
+      label(for='age') Age:
+      input#age(type='number' name='age' value='' placeholder='')
+      span It must be number. It cannot be negative or bigger than 80
+      br
+      label(for='weight') Weight:
+      input#age(type='number' name='weight' value='' placeholder='')
+      span It must be number. It cannot be smaller than 40 or bigger than 160. The unit of weight is in kg.
+      br
+      label(for='height') Height:
+      input#height(type='number' name='height' value='' placeholder='')
+      span It must be number. It cannot be smaller than 130 or bigger than 230. The unit of height is in cm.
+      br
+      #btn
+        button#button(type='submit' value='submit') Submit
+  .result
+  - if (bmivalue)
+    .bmiresult BMI:#{bmivalue.bmi}  <br> Health: #{bmivalue.health} <br> Healthy-BMI-Range: #{bmivalue.healthy_bmi_range}

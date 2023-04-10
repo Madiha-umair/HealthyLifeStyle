@@ -8,7 +8,7 @@ block main-content
         span It must be number. It cannot be negative or bigger than 80
         br
         label(for='gender') Gender:
-        input#age(type='text' name='gender' value='' placeholder='')
+        input#gender(type='text' name='gender' value='' placeholder='')
         span It must be string.It can only be male or female.
         br
         label(for='height') Height:
@@ -16,11 +16,11 @@ block main-content
         span It must be number. It cannot be smaller than 130 or bigger than 230. The unit of height is in cm.
         br
         label(for='weight') Weight:
-        input#age(type='number' name='weight' value='' placeholder='')
+        input#weight(type='number' name='weight' value='' placeholder='')
         span It must be number. It cannot be smaller than 40 or bigger than 160. The unit of weight is in kg.
         br
         label(for='activitylevel') Activity Level:
-        input#height(type='text' name='activitylevel' value='' placeholder='')
+        input#activitylevel(type='text' name='activitylevel' value='' placeholder='')
         span There are six possible activity levels:
             div level _ 1 : “Sedentary: little or no exercise”,
             div level _ 2 : “Exercise 1-3 times/week”,
@@ -33,4 +33,4 @@ block main-content
         br
     .result
     - if (dailycalorie)
-        li BMR: #{dailycalorie.BMR}
+        .calorieresult BMR: #{dailycalorie.BMR}
