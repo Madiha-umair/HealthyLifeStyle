@@ -1,8 +1,9 @@
 # Some changes from last time
 
 ## Local modules
-The Trakt API stuff is in the /modules/trakt folder.
-
+The Exercise db API stuff is in the /modules/exercisedb folder.
+Same key also used for Fitness Calculator API.
+"X-RapidAPI-Key": "7106c8e6e0msh01abc33797f25ebp189cf6jsn1b8a3f05cff3"
 
 ## Secured API settings using .env
 1. Use the dotenv module (npm i dotenv) to save values in environment variables.
