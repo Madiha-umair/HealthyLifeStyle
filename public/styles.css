@@ -31,7 +31,8 @@ h1, h2, h3, h4 {
   flex:1 0 0;
   font-family: 'Libre Baskerville', serif;
   font-size: 30px;
-  font: azure;
+  /*font: azure;*/
+  font: rgb(116, 150, 150);
   text-align: center;
   margin-left: 20px ;
 }
@@ -58,7 +59,8 @@ li a {
   position: relative;
 }
 #header, #footer{
-  background-color:#efd9d8;
+  /*background-color:#efd9d8;*/
+  background-color:#bc4842;
 }
 #footer{
  /* padding:1em 1em;*/
