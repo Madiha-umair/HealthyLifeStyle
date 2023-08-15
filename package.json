@@ -1,11 +1,13 @@
 {
-  "name": "exercisedb",
+  "name": "healthy_life_style",
   "version": "1.0.0",
-  "description": "Test application using Express and Node to test the ExerciseDB REST API",
+  "description": "Search different exercises according to your requirement",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon ./index.js",
-    "ui": "browser-sync start --config bs-config.js"
+    "build": "npm run dev",
+    "build-client": "webpack --mode=production --config webpack.client.config.js",
+    "build-server": "webpack --mode=production --config webpack.server.config.js"
   },
   "author": "Madiha Umair",
   "license": "ISC",
