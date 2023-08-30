@@ -1,3 +1,5 @@
+
+import fetch from 'node-fetch';
 const exercisedb = "https://exercisedb.p.rapidapi.com";  //base URL for any ExerciseDB API requests
 const fitnessCalculator = "https://fitness-calculator.p.rapidapi.com";  //base URL for any fitness calculator API requests
 
@@ -202,7 +204,7 @@ async function foodlist(){
     return await response.json();
 }
 */
-module.exports ={
+export default {
     getListOfBodyParts,
     getListByBodyParts,
     getListOfTargetMuscles,

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Search different exercises according to your requirement",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "nodemon ./index.js",
     "start": "node ./index.js",
@@ -13,6 +14,7 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "node-fetch": "^3.3.2",
     "pug": "^3.0.2"
   },
   "devDependencies": {

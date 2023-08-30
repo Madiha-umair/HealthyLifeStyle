@@ -1,20 +1,26 @@
 //import required modules
-const express = require("express");
-const path = require("path");
-const dotenv = require("dotenv");
+import express from "express";
+import { join, dirname } from "path";
+import { config } from "dotenv";
 
-dotenv.config();
-const exercisedb = require("./modules/exercisedb/api");
+config();
+import exercisedb from "./api.js";
+
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = dirname(__filename);
 
 //set up Express app
 const app = express();
 const port = process.env.PORT || 8888;
 
 //define important folders
-app.set("views", path.join(__dirname, "views"));
+app.set("views", join(__dirname, "views"));
 app.set("view engine", "pug");
 //setup public folder
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(join(__dirname, "public")));
 
 //PAGE ROUTES
 app.get("/", (request, response) => {
@@ -42,7 +48,7 @@ app.get("/targetmuscles", async (request, response) => {
 app.get("/equipment", async (request, response) => {
   let equipmentList = await exercisedb.getListOfEquipment();
   var equipment = request.query.equipments;
-  let equipmentExercises = await exercisedb.getListByEquipment(equipment);
+  let equipmentExercises = await getListByEquipment(equipment);
   response.render('equipment', { equipmentList: equipmentList , equipmentExercises: equipmentExercises , selectedEquipment: equipment });
 });
 
